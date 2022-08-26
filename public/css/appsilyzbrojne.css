@@ -1,0 +1,131 @@
+.section-threepostsection {
+  overflow: hidden;
+  height: 300px;
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+  color: white;
+  font-family: Arial;
+  align-items: flex-end;
+}
+.section-fisttableimage {
+  overflow: hidden;
+  height: 400px;
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+  color: white;
+  font-family: Arial;
+  align-items: flex-end;
+}
+
+.section-righttableimage {
+  overflow: hidden;
+  height: 120px;
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+  color: white;
+  font-family: Arial;
+  align-items: flex-end;
+}
+
+.section-bottomtabeimage {
+  overflow: hidden;
+  height: 220px;
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+  color: white;
+  font-family: Arial;
+  align-items: flex-end;
+}
+
+.btn-sectiontext {
+  border: none;
+  background-color: inherit;
+  color: #4b5320;
+}
+
+.bg-section {
+  background-color: #4b5320;
+  color: #ffffff;
+}
+
+.section-imagebox {
+  padding-left: 0px;
+  padding-right: 0px;
+  margin-left: 5px;
+  margin-right: 5px;
+  margin
+}
+.text-section {
+  color: #4b5320;
+}
+
+.nav-link:focus, .nav-link:hover {
+  color: #4b5320;
+  background-color: #ffffff;
+}
+
+
+.active {
+  color: #4b5320 !important;
+  font-weight: bold;
+}
+
+.navbaritem-section {
+  color: #ffffff;
+  font-size: medium;
+  text-transform: uppercase;
+}
+
+.navbaritem-section:hover, .navbaritem-section:focus  {
+  background-color: #ffffff;
+  color: #4b5320;
+}
+
+.navbar-section > li > .dropdown-menu {
+  padding-top: 1px;
+  padding-bottom: 0px;
+  border: none;
+}
+
+.navbar-section > li > .dropdown-menu > .dropdown-item {
+  background-color: #ffffff;
+  color: #4b5320;
+  border: solid;
+  border-width: 1px 1px 1px 1px;
+  border-color: #4b5320;
+  font-size: medium;
+  text-transform: uppercase;
+  text-align: center;
+}
+.navbar-section > li > .dropdown-menu > .dropdown-item:hover {
+  background-color: #4b5320;
+  color: #ffffff;
+}
+.bg-section {
+  background-color: #4b5320;
+}
+
+.dropdown-toggle {
+  color: #ffffff;
+  background-color: #4b5320;
+}
+
+.dropdown-toggle:focus, .dropdown-toggle:hover {
+  color: #4b5320;
+  background-color: #ffffff;
+}
+
+.section-rightlist {
+  height: 137px;
+}
+
+hr.section-hr {
+    color: #4b5320;
+    background-color: #4b5320;
+    border: 1px solid;
+    opacity: 1;
+}

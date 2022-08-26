@@ -3,109 +3,76 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
-use App\Models\Oferty;
-use App\Models\Aktualnosci;
-use App\Models\Baza;
-use Illuminate\Support\Facades\DB;
+use App\Http\Controllers\Controller;
+use App\Models\Section;
+use App\Models\Post;
 
 class HomeController extends Controller
 {
-    /**
-     * Create a new controller instance.
-     *
-     * @return void
-     */
+     public function index()
+     {
+       $firstpost = Post::orderBy('id', 'DESC')->first();
+       $posts = Post::orderBy('id', 'DESC')->skip(1)->take(24)->get();
+       $sections = Section::get();
+       /*
+       $fakty = Section::where('section','Fakty')->first();
+       $fakty = $fakty->getposts();
+       $fakty = $fakty->take(5);
+       $biznes = Section::where('section','Biznes')->first();
+       $biznes = $biznes->getposts();
+       $biznes = $biznes->take(5);
+       $sport = Section::where('section','Sport')->first();
+       $sport = $sport->getposts();
+       $sport = $sport->take(5);
+       $salonpolityczny = Section::where('section','Salon Polityczny')->first();
+       $salonpolityczny = $salonpolityczny->getposts();
+       $salonpolityczny = $salonpolityczny->take(5);
+       $kfd = Section::where('section','Kobieta, Facet Dziecko')->first();
+       $kfd = $kfd->getposts();
+       $kfd = $kfd->take(5);
+       $hobby = Section::where('section','Hobby')->first();
+       $hobby = $hobby->getposts();
+       $hobby = $hobby->take(5);
+       $kultura = Section::where('section','Kultura')->first();
+       $kultura = $kultura->getposts();
+       $kultura = $kultura->take(5);
+       $motoryzacja = Section::where('section','Motoryzacja')->first();
+       $motoryzacja = $motoryzacja->getposts();
+       $motoryzacja = $motoryzacja->take(5);
+       $naukaitechnologie = Section::where('section','Nauka i Technologie')->first();
+       $naukaitechnologie = $naukaitechnologie->getposts();
+       $naukaitechnologie = $naukaitechnologie->take(5);
+       $historia = Section::where('section','Historia')->first();
+       $historia = $historia->getposts();
+       $historia = $historia->take(5);
+       $slubzbymundurowe = Section::where('section','Służby Mundurowe')->first();
+       $slubzbymundurowe = $slubzbymundurowe->getposts();
+       $slubzbymundurowe = $slubzbymundurowe->take(5);
+       $turystyka = Section::where('section','Turystyka')->first();
+       $turystyka = $turystyka->getposts();
+       $turystyka = $turystyka->take(5);
+       $spoleczenstwo = Section::where('section','Społeczeństwo')->first();
+       $spoleczenstwo = $spoleczenstwo->getposts();
+       $spoleczenstwo = $spoleczenstwo->take(5);
+       */
+         return view('plportal.index')
+         ->with('firstpost', $firstpost)
+         ->with('posts', $posts)
+         /*->with('fakty', $fakty)
+         ->with('biznes', $biznes)
+         ->with('sport', $sport)
+         ->with('salonpolityczny', $salonpolityczny)
+         ->with('kfd', $kfd)
+         ->with('hobby', $hobby)
+         ->with('kultura', $kultura)
+         ->with('motoryzacja', $motoryzacja)
+         ->with('naukaitechnologie', $naukaitechnologie)
+         ->with('historia', $historia)
+         ->with('slubzbymundurowe', $slubzbymundurowe)
+         ->with('turystyka', $turystyka)
+         ->with('spoleczenstwo', $spoleczenstwo)
+         */
+         ->with('sections', $sections);
+     }
 
-
-    /**
-     * Show the application dashboard.
-     *
-     * @return \Illuminate\Contracts\Support\Renderable
-     */
-    public function index()
-    {
-        return view('home');
-    }
-
-
-    public function Instalacje()
-    {
-        return view('Instalacje');
-    }
-    public function onas()
-    {
-        return view('onas');
-    }
-    public function kalkulator()
-    {
-        return view('kalkulator');
-    }
-    public function naszerealizacje()
-    {
-        return view('naszerealizacje');
-    }
-    public function kontakt()
-    {
-        return view('kontakt');
-    }
-    public function fotowoltaikadladomu()
-    {
-        return view('fotowoltaikadladomu');
-    }
-    public function fotowoltaikadlafirmy()
-    {
-        return view('fotowoltaikadlafirmy');
-    }
-    public function fotowoltaikadlarolnika()
-    {
-        return view('fotowoltaikadlarolnika');
-    }
-    public function Regulamin()
-    {
-        return view('Regulamin');
-    }
-    public function kosztyisposobydostawy()
-    {
-        return view('kosztyisposobydostawy');
-    }
-    public function sposobyplatnosci()
-    {
-        return view('sposobyplatnosci');
-    }
-    public function prawoodstapieniaodumowy()
-    {
-        return view('prawoodstapieniaodumowy');
-    }
-    public function politykaprywatnosci()
-    {
-        return view('politykaprywatnosci');
-    }
-
-
-    public function bazawiedzy()
-    {
-        $bazas = DB::table('bazas')->get();
-        return view('BazaWiedzy/bazawiedzy', ['bazas' => $bazas]);
-    }
-
-    public function naszeoferty()
-    {
-        $oferies = DB::table('oferties')->get();
-        return view('Oferty/naszeoferty', ['oferties' => $oferies]);
-    }
-    public function aktualnosci()
-    {
-        $aktualnoscis = DB::table('aktualnoscis')->get();
-        return view('Aktualnosci/aktualnosci', ['aktualnoscis' => $aktualnoscis]);
-    }
-    public function bazawiedzyshow(\App\Models\Baza $baza)
-      {
-          $list = Baza::latest()->take(5)->get();
-          return view ('BazaWiedzy/bazawiedzyshow', compact('baza'),['list' => $list]);
-      }
-    public function aktualnoscishow(\App\Models\Aktualnosci $aktualnosc)
-      {
-          $list = Aktualnosci::latest()->take(5)->get();
-          return view ('Aktualnosci/aktualnoscishow', compact('aktualnosc'),['list' => $list]);
-      }
 }
