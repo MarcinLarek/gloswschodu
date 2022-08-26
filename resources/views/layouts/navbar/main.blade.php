@@ -23,3 +23,25 @@
         </ul>
     </div>
 </nav>
+
+<div class="row">
+
+</div>
+
+<div class="container">
+  <nav class="navbar-expand-sm bg-section mt-1 mb-3">
+    <div class="collapse navbar-collapse">
+        <ul class="navbar-nav navbar-section mx-auto">
+          @foreach($countries as $country)
+
+          <li class="nav-item dropdown">
+            <a id="navbarDropdown" class="nav-link navbaritem-section dropdown-toggle" href="" role="button" data-bs-toggle="dropdown">
+                {{$country->country}}
+            </a>
+          </li>
+
+          @endforeach
+        </ul>
+    </div>
+  </nav>
+</div>
