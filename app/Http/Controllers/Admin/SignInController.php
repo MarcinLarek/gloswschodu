@@ -12,6 +12,7 @@ use Illuminate\Support\Facades\Mail;
 use App\Mail\AdminLoginMail;
 use Illuminate\Support\Facades\DB;
 use App\Models\Section;
+use App\Models\Countries;
 
 
 class SignInController extends Controller
@@ -20,8 +21,10 @@ class SignInController extends Controller
     {
         $notification = 0;
         $sections = Section::get();
+        $countries = Countries::get();
         return view('admin.sign-in.index')
         ->with('notification', $notification)
+        ->with('countries', $countries)
         ->with('sections', $sections);
     }
 
@@ -33,14 +36,18 @@ class SignInController extends Controller
           Mail::to($user['email'])->send(new AdminLoginMail($user));
           $notification = 2;
           $sections = Section::get();
+          $countries = Countries::get();
           return view('admin.sign-in.index')
       ->with('notification', $notification)
+      ->with('countries', $countries)
       ->with('sections', $sections);
       } else {
           $notification = 1;
           $sections = Section::get();
+          $countries = Countries::get();
           return view('admin.sign-in.index')
       ->with('notification', $notification)
+      ->with('countries', $countries)
       ->with('sections', $sections);
       }
     }

@@ -28,14 +28,22 @@
 
 </div>
 
+@if(isset($check))
 <div class="container">
-  <nav class="navbar-expand-sm bg-section mt-1 mb-3">
+
+  <div class="row mt-2">
+    <div class="col-12 d-flex  justify-content-between headerimage w-100" style="background-image:  url('/storage/naglowek.jpg');">
+      <a href="{{route('index')}}" class="w-100 h-100"></a>
+  </div>
+</div>
+
+  <nav class="navbar-expand-sm bg-section mt-2 mb-3">
     <div class="collapse navbar-collapse">
         <ul class="navbar-nav navbar-section mx-auto">
           @foreach($countries as $country)
 
-          <li class="nav-item dropdown">
-            <a id="navbarDropdown" class="nav-link navbaritem-section dropdown-toggle" href="" role="button" data-bs-toggle="dropdown">
+          <li class="nav-item ">
+            <a class="nav-link navbaritem-section" href="{{ route('post.country', ['country' => $country]) }}" role="button">
                 {{$country->country}}
             </a>
           </li>
@@ -45,3 +53,31 @@
     </div>
   </nav>
 </div>
+@else
+
+<div class="container">
+
+  <div class="row mt-2">
+    <div class="col-12 d-flex  justify-content-between headerimage w-100" style="background-image:  url('/storage/naglowek.jpg');">
+      <a href="{{route('index')}}" class="w-100 h-100"></a>
+  </div>
+</div>
+
+  <nav class="navbar-expand-sm bg-section mt-2 mb-3">
+    <div class="collapse navbar-collapse">
+        <ul class="navbar-nav navbar-section mx-auto">
+          @foreach($countries as $country)
+
+          <li class="nav-item ">
+            <a class="nav-link navbaritem-section" href="{{ route('post.section.country', ['country' => $country, 'section' => $serachsection]) }}" role="button">
+                {{$country->country}}
+            </a>
+          </li>
+
+          @endforeach
+        </ul>
+    </div>
+  </nav>
+</div>
+
+@endif

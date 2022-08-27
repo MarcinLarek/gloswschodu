@@ -171,7 +171,7 @@
 
 
             <div class="row pt-4">
-                <div class="col-sm-4">
+                <div class="col-4">
                     <label for="category" class="control-label">Zaznacz kategorie</label>
                     <select size="24" class="form-select col-12" multiple="multiple" name="category[]" id="category">
                       @foreach($category as $cat)
@@ -187,7 +187,20 @@
                     <span class="text-danger">{{ $message }}</span>
                     @enderror
                 </div>
-                <div class="col sm-3">
+                <div class="col-4">
+                  <label for="country" class="control-label">Zaznacz państwo</label>
+                  <select size="24" class="form-select col-12" name="country" id="country">
+                    @foreach($countries as $count)
+                        <option value="{{$count->id}}">
+                          {{$count->country }}
+                        </option>
+                    @endforeach
+                  </select>
+                  @error('category')
+                  <span class="text-danger">{{ $message }}</span>
+                  @enderror
+                </div>
+                <div class="col-4">
                     <div class="row">
                         <label for="image" class="col-md-4 col-form-label">Zdjęcie</label>
                         <input type="file" class="form-control-file" id="image" name="image">

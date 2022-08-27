@@ -17,6 +17,7 @@ class CreatePostsTable extends Migration
             $table->id();
             $table->string('title');
             $table->unsignedBigInteger('admin_id');
+            $table->unsignedBigInteger('country_id');
             $table->string('author');
             $table->string('source');
             $table->string('image');

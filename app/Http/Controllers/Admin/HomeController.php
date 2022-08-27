@@ -8,13 +8,16 @@ use App\Models\Post;
 use Spatie\ImageOptimizer\OptimizerChainFactory;
 use Illuminate\Support\Facades\DB;
 use App\Models\Section;
+use App\Models\Countries;
 
 class HomeController extends Controller
 {
     public function index()
     {
         $sections = Section::get();
+        $countries = Countries::get();
         return view('admin.index')
+        ->with('countries', $countries)
         ->with('sections', $sections);
     }
 

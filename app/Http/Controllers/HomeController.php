@@ -16,10 +16,12 @@ class HomeController extends Controller
        $firstpost = Post::orderBy('id', 'DESC')->first();
        $posts = Post::orderBy('id', 'DESC')->skip(1)->take(24)->get();
        $sections = Section::get();
+       $check = true;
        $countries = Countries::get();
          return view('plportal.index')
          ->with('firstpost', $firstpost)
          ->with('posts', $posts)
+         ->with('check', $check)
          ->with('countries', $countries)
          ->with('sections', $sections);
      }

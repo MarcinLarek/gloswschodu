@@ -11,6 +11,7 @@ class Post extends Model
 
     protected $fillable = [
         'admin_id',
+        'country_id',
         'title',
         'author',
         'source',
@@ -60,4 +61,10 @@ class Post extends Model
      $category = Category::where('id',$postcategories->category_id)->first();
      return $category;
    }
+
+   public function getcountry() {
+     $country = Countries::where('id',$this->country_id)->first();
+     return $country;
+   }
+
 }

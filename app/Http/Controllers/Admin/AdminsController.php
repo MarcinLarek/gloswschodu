@@ -9,6 +9,7 @@ use Illuminate\Support\Facades\Hash;
 use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Str;
 use App\Models\Section;
+use App\Models\Countries;
 
 class AdminsController extends Controller
 {
@@ -16,7 +17,9 @@ class AdminsController extends Controller
     {
       $admins = Admin::all();
       $sections = Section::get();
+      $countries = Countries::get();
       return view('admin.admins.index')
+      ->with('countries', $countries)
       ->with('admins', $admins)
       ->with('sections', $sections);
     }
@@ -25,14 +28,18 @@ class AdminsController extends Controller
     {
       $admin = Admin::find($id);
       $sections = Section::get();
+      $countries = Countries::get();
       return view('admin.admins.edit')
+      ->with('countries', $countries)
       ->with('admin', $admin)
       ->with('sections', $sections);
     }
     public function create()
     {
       $sections = Section::get();
+      $countries = Countries::get();
       return view('admin.admins.create')
+      ->with('countries', $countries)
       ->with('sections', $sections);
     }
 
@@ -98,7 +105,9 @@ class AdminsController extends Controller
     {
       $admin = Admin::find($id);
       $sections = Section::get();
+      $countries = Countries::get();
       return view('admin.admins.delete')
+      ->with('countries', $countries)
       ->with('admin', $admin)
       ->with('sections', $sections);
     }
@@ -114,8 +123,10 @@ class AdminsController extends Controller
     {
       $admin = Admin::find($id);
       $sections = Section::get();
+      $countries = Countries::get();
       return view('admin.admins.editprivileges')
       ->with('admin', $admin)
+      ->with('countries', $countries)
       ->with('sections', $sections);
 
     }

@@ -10,6 +10,7 @@ use App\Models\Post;
 use App\Models\Admin;
 use App\Models\Category;
 use App\Models\PostCategories;
+use App\Models\Countries;
 
 class PostController extends Controller
 {
@@ -31,10 +32,12 @@ class PostController extends Controller
       }
       $sections = Section::get();
       $cleansection = str_replace(',','',strtolower(preg_replace('/\s+/', '', $section->section)));
+      $countries = Countries::get();
       return view($cleansection.'.index')
        ->with('firstpost', $firstpost)
        ->with('posts', $posts)
        ->with('categories', $categorylist)
+       ->with('countries', $countries)
        ->with('serachsection', $section)
        ->with('section', $cleansection)
        ->with('sections', $sections);
@@ -53,10 +56,12 @@ class PostController extends Controller
     $sections = Section::get();
     $admin = Admin::where('id',$post->admin_id)->first();
     $cleansection = str_replace(',','',strtolower(preg_replace('/\s+/', '', $section->section)));
+    $countries = Countries::get();
     return view($cleansection.'.show')
     ->with('post', $post)
     ->with('posts', $posts)
     ->with('topposts', $topposts)
+    ->with('countries', $countries)
     ->with('section', $cleansection)
     ->with('serachsection', $section)
     ->with('sections', $sections)
@@ -74,13 +79,14 @@ class PostController extends Controller
                              ->get();
     $sections = Section::get();
     $cleansection = str_replace(',','',strtolower(preg_replace('/\s+/', '', $section->section)));
-
+    $countries = Countries::get();
     return view($cleansection.'.category')
     ->with('main', $main)
     ->with('posts', $posts)
     ->with('topposts', $topposts)
     ->with('section', $cleansection)
     ->with('serachsection', $section)
+    ->with('countries', $countries)
     ->with('sections', $sections)
     ->with('topcategory', $category->category)
     ->with('categories', $categorylist);
@@ -120,14 +126,56 @@ class PostController extends Controller
                              ->get();
     $sections = Section::get();
     $cleansection = str_replace(',','',strtolower(preg_replace('/\s+/', '', $section->section)));
+    $countries = Countries::get();
+    return view($cleansection.'.category')
+    ->with('main', $main)
+    ->with('posts', $posts)
+    ->with('topposts', $topposts)
+    ->with('section', $cleansection)
+    ->with('countries', $countries)
+    ->with('serachsection', $section)
+    ->with('sections', $sections)
+    ->with('search', $search)
+    ->with('categories', $categorylist);
+  }
+
+  public function country(Countries $country){
+    $main = $country->getposts()->sortDesc()->paginate( 20 );
+    $posts = $country->getposts()->sortByDesc('id')->take(10);
+    $topposts = $country->getposts()->sortByDesc('reads')->take(10);
+    $sections = Section::get();
+    $countries = Countries::get();
+    $check = true;
+    return view('plportal.category')
+    ->with('main', $main)
+    ->with('posts', $posts)
+    ->with('topposts', $topposts)
+    ->with('countries', $countries)
+    ->with('check', $check)
+    ->with('country',$country)
+    ->with('sections', $sections);
+  }
+
+  public function sectioncountry(Section $section, Countries $country)
+  {
+    $main = $section->getposts()->where('country_id', $country->id)->sortDesc()->paginate( 20 );
+    $posts = $section->getposts()->sortByDesc('id')->take(10);
+    $topposts = $section->getposts()->sortByDesc('reads')->take(10);
+    $categorylist = Category::where('section_id',$section->id)
+                             ->where('parent_category_id',null)
+                             ->get();
+    $sections = Section::get();
+    $cleansection = str_replace(',','',strtolower(preg_replace('/\s+/', '', $section->section)));
+    $countries = Countries::get();
     return view($cleansection.'.category')
     ->with('main', $main)
     ->with('posts', $posts)
     ->with('topposts', $topposts)
     ->with('section', $cleansection)
     ->with('serachsection', $section)
+    ->with('countries', $countries)
     ->with('sections', $sections)
-    ->with('search', $search)
+    ->with('topcategory', $country->country)
     ->with('categories', $categorylist);
   }
 

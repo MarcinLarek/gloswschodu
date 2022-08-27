@@ -9,6 +9,7 @@ use Illuminate\Support\Facades\Hash;
 use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Str;
 use App\Models\Section;
+use App\Models\Countries;
 
 class CategoryController extends Controller
 {
@@ -17,8 +18,10 @@ class CategoryController extends Controller
       $section = Section::where('section', $section)->first();
       $sections = Section::get();
       $category = $section->getcategories();
+      $countries = Countries::get();
       return view('admin.category.create')
       ->with('sections', $sections)
+      ->with('countries', $countries)
       ->with('section', $section)
       ->with('category', $category);
     }
@@ -26,7 +29,9 @@ class CategoryController extends Controller
     public function selectsection()
     {
       $sections = Section::get();
+      $countries = Countries::get();
       return view('admin.category.selectsection')
+      ->with('countries', $countries)
       ->with('sections', $sections);
     }
 
