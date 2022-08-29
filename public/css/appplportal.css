@@ -44,11 +44,11 @@
 .btn-sectiontext {
   border: none;
   background-color: inherit;
-  color: #334572;
+  color: #2a4280;
 }
 
 .bg-section {
-  background-color: #334572;
+  background-color: #2a4280;
   color: #ffffff;
 }
 
@@ -60,17 +60,17 @@
   margin
 }
 .text-section {
-  color: #334572;
+  color: #2a4280;
 }
 
 .nav-link:focus, .nav-link:hover {
-  color: #334572;
+  color: #2a4280;
   background-color: #ffffff;
 }
 
 
 .active {
-  color: #334572 !important;
+  color: #2a4280 !important;
   font-weight: bold;
 }
 
@@ -82,7 +82,7 @@
 
 .navbaritem-section:hover, .navbaritem-section:focus  {
   background-color: #ffffff;
-  color: #334572;
+  color: #2a4280;
 }
 
 .navbar-section > li > .dropdown-menu {
@@ -93,29 +93,29 @@
 
 .navbar-section > li > .dropdown-menu > .dropdown-item {
   background-color: #ffffff;
-  color: #334572;
+  color: #2a4280;
   border: solid;
   border-width: 1px 1px 1px 1px;
-  border-color: #334572;
+  border-color: #2a4280;
   font-size: medium;
   text-transform: uppercase;
   text-align: center;
 }
 .navbar-section > li > .dropdown-menu > .dropdown-item:hover {
-  background-color: #334572;
+  background-color: #2a4280;
   color: #ffffff;
 }
 .bg-section {
-  background-color: #334572;
+  background-color: #2a4280;
 }
 
 .dropdown-toggle {
   color: #ffffff;
-  background-color: #334572;
+  background-color: #2a4280;
 }
 
 .dropdown-toggle:focus, .dropdown-toggle:hover {
-  color: #334572;
+  color: #2a4280;
   background-color: #ffffff;
 }
 
@@ -124,8 +124,8 @@
 }
 
 hr.section-hr {
-    color: #334572;
-    background-color: #334572;
+    color: #2a4280;
+    background-color: #2a4280;
     border: 1px solid;
     opacity: 1;
 }

@@ -28,22 +28,7 @@ class Section extends Model
     }
 
     public function getposts() {
-      $categorylist = Category::where('section_id',$this->id)->get();
-      $filteredcategories = PostCategories::take(0)->get();
-      foreach ($categorylist as $catli ) {
-        $temp1 = PostCategories::where('category_id',$catli->id)->get();;
-        foreach ($temp1 as $tempp1) {
-          $filteredcategories->push($tempp1);
-        }
-      }
-      $posttoshow = Post::take(0)->get();
-      foreach ($filteredcategories as $filtcat) {
-        $temp = Post::where('id', $filtcat->post_id)->get();
-        foreach ($temp as $tempp) {
-          $posttoshow->push($tempp);
-        }
-      }
-      $posts = $posttoshow->unique();
+      $posts = Post::where('section_id', $this->id)->get();
       return $posts;
     }
 

@@ -16,8 +16,10 @@ class HomeController extends Controller
     {
         $sections = Section::get();
         $countries = Countries::get();
+        $check = true;
         return view('admin.index')
         ->with('countries', $countries)
+        ->with('check', $check)
         ->with('sections', $sections);
     }
 

@@ -19,8 +19,10 @@ class CategoryController extends Controller
       $sections = Section::get();
       $category = $section->getcategories();
       $countries = Countries::get();
+      $check = true;
       return view('admin.category.create')
       ->with('sections', $sections)
+      ->with('check', $check)
       ->with('countries', $countries)
       ->with('section', $section)
       ->with('category', $category);
@@ -30,8 +32,10 @@ class CategoryController extends Controller
     {
       $sections = Section::get();
       $countries = Countries::get();
+      $check = true;
       return view('admin.category.selectsection')
       ->with('countries', $countries)
+      ->with('check', $check)
       ->with('sections', $sections);
     }
 

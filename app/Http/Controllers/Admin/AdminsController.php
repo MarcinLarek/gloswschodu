@@ -18,8 +18,10 @@ class AdminsController extends Controller
       $admins = Admin::all();
       $sections = Section::get();
       $countries = Countries::get();
+      $check = true;
       return view('admin.admins.index')
       ->with('countries', $countries)
+      ->with('check', $check)
       ->with('admins', $admins)
       ->with('sections', $sections);
     }
@@ -29,8 +31,10 @@ class AdminsController extends Controller
       $admin = Admin::find($id);
       $sections = Section::get();
       $countries = Countries::get();
+      $check = true;
       return view('admin.admins.edit')
       ->with('countries', $countries)
+      ->with('check', $check)
       ->with('admin', $admin)
       ->with('sections', $sections);
     }
@@ -38,8 +42,10 @@ class AdminsController extends Controller
     {
       $sections = Section::get();
       $countries = Countries::get();
+      $check = true;
       return view('admin.admins.create')
       ->with('countries', $countries)
+      ->with('check', $check)
       ->with('sections', $sections);
     }
 
@@ -106,9 +112,11 @@ class AdminsController extends Controller
       $admin = Admin::find($id);
       $sections = Section::get();
       $countries = Countries::get();
+      $check = true;
       return view('admin.admins.delete')
       ->with('countries', $countries)
       ->with('admin', $admin)
+      ->with('check', $check)
       ->with('sections', $sections);
     }
     public function deleteadmin($id)
@@ -124,8 +132,10 @@ class AdminsController extends Controller
       $admin = Admin::find($id);
       $sections = Section::get();
       $countries = Countries::get();
+      $check = true;
       return view('admin.admins.editprivileges')
       ->with('admin', $admin)
+      ->with('check', $check)
       ->with('countries', $countries)
       ->with('sections', $sections);
 

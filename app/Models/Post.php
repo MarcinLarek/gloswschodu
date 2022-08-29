@@ -12,6 +12,7 @@ class Post extends Model
     protected $fillable = [
         'admin_id',
         'country_id',
+        'section_id',
         'title',
         'author',
         'source',
@@ -37,9 +38,7 @@ class Post extends Model
    }
 
    public function getsection() {
-     $postcategories = PostCategories::where('post_id',$this->id)->first();
-     $categories = Category::where('id',$postcategories->category_id)->first();
-     $section = Section::where('id',$categories->section_id)->first();
+     $section = Section::where('id',$this->section_id)->first();
      return $section;
    }
 

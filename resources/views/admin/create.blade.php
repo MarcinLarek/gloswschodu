@@ -211,7 +211,6 @@
                 </div>
                 <input type="hidden" name="section" value="{{$section}}">
             </div>
-
             <div class="row justify-content-center text-center">
                 <div class="form-group col mt-md-4 pb-5 mb-5">
                     <input type="submit" value="Zapisz" class="btn btn-lg btn-primary" />

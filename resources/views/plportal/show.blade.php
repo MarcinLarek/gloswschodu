@@ -1,5 +1,9 @@
-@extends('layouts.navbar.'.$section)
+@extends('layouts.navbar.plportal')
+@section('styles')
+<link href="{{ asset('css/appplportal.css') }}" rel="stylesheet">
+@endsection
 @section('mainpage')
+
 <div class="row">
     <div class="col-xl-9 col-l-9 col-md-12 col-sm-12 ">
       <div class="row">

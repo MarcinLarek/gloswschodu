@@ -22,8 +22,10 @@ class SignInController extends Controller
         $notification = 0;
         $sections = Section::get();
         $countries = Countries::get();
+        $check = true;
         return view('admin.sign-in.index')
         ->with('notification', $notification)
+        ->with('check', $check)
         ->with('countries', $countries)
         ->with('sections', $sections);
     }
@@ -37,17 +39,21 @@ class SignInController extends Controller
           $notification = 2;
           $sections = Section::get();
           $countries = Countries::get();
+          $check = true;
           return view('admin.sign-in.index')
       ->with('notification', $notification)
       ->with('countries', $countries)
+      ->with('check', $check)
       ->with('sections', $sections);
       } else {
           $notification = 1;
           $sections = Section::get();
           $countries = Countries::get();
+          $check = true;
           return view('admin.sign-in.index')
       ->with('notification', $notification)
       ->with('countries', $countries)
+      ->with('check', $check)
       ->with('sections', $sections);
       }
     }

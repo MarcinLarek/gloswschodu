@@ -3,6 +3,7 @@
 <link href="{{ asset('css/appplportal.css') }}" rel="stylesheet">
 @endsection
 @section('mainpage')
+
 <div class="row">
  <h5 class="text-section">
    {{$country->country}}

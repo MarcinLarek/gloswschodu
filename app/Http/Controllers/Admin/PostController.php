@@ -23,10 +23,12 @@ class PostController extends Controller
         $tempsection = Section::where('section', $section)->first();
         $category = Category::where('section_id',$tempsection['id'])->get();
         $countries = Countries::get();
+        $check = true;
         return view('admin.list')
               ->with('sections', $sections)
               ->with('section', $section)
               ->with('posts', $posts)
+              ->with('check', $check)
               ->with('countries', $countries)
               ->with('category', $category)
               ->with('permissioncheck',$permissioncheck);
@@ -39,10 +41,12 @@ class PostController extends Controller
         $tempsection = Section::where('section', $section)->first();
         $category = Category::where('section_id',$tempsection['id'])->get();
         $countries = Countries::get();
+        $check = true;
         return view('admin.create')
               ->with('sections', $sections)
               ->with('section', $section)
               ->with('countries', $countries)
+              ->with('check', $check)
               ->with('category', $category)
               ->with('permissioncheck',$permissioncheck);
     }
@@ -54,12 +58,14 @@ class PostController extends Controller
         $section = $section->section;
         $permissioncheck = Section::where('section',$section)->first();
         $sections = Section::get();
+        $check = true;
         $tempsection = Section::where('section', $section)->first();
         $category = Category::where('section_id',$tempsection['id'])->get();
         $countries = Countries::get();
         return view('admin.edit')
               ->with('post', $post)
               ->with('sections', $sections)
+              ->with('check', $check)
               ->with('section', $section)
               ->with('countries', $countries)
               ->with('category', $category)
@@ -123,10 +129,12 @@ class PostController extends Controller
     {
       $post = Post::find($id);
       $sections = Section::get();
+      $check = true;
       $countries = Countries::get();
       return view('admin.postdelete')
       ->with('countries', $countries)
       ->with('post', $post)
+      ->with('check', $check)
       ->with('sections', $sections);
     }
     public function deletepost($id)
@@ -137,7 +145,7 @@ class PostController extends Controller
     }
 
     public function temppostmaker()
-    {/*
+    {/* OUTDATED
       $categories = Category::get();
 
       if (Post::get()->isempty()) {
