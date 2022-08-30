@@ -57,19 +57,6 @@
         @endforeach
 
 </div>
-
-
-
-</div>
-<div class="row">
-  <div class="col-12 d-flex justify-content-center">
-    <a data-pin-do="buttonBookmark" href="https://www.pinterest.com/pin/create/button/"></a>
-    <div class="pe-1 ps-1"><a href="https://twitter.com/share?ref_src=twsrc%5Etfw" class="twitter-share-button" data-show-count="false">Tweetnij</a></div>
-    <div class="fb-like" data-href="https://www.facebook.com/plportalpl/" data-width="" data-share="true" data-layout="button"  data-action="like" data-size="large"></div>
-  </div>
 </div>
 
-<div class="row pt-2">
-  <b>Oceń artykuł:</b>
-</div>
 @endsection

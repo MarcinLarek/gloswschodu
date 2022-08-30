@@ -7,9 +7,6 @@
                     {{$section->section}}
                 </a>
                 <div class="dropdown-menu " aria-labelledby="navbarDropdown">
-                  <a class="dropdown-item" href="{{ route( 'post.index', ['section' => $section] ) }}">
-                      Strona główna
-                  </a>
                   @foreach($section->category as $category)
                   @if($category->parent_category_id == null)
                   <a class="dropdown-item" href="{{ route('post.category', ['category' => $category, 'section' => $category->getsection()]) }}">

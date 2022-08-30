@@ -6,7 +6,9 @@
 
 <div class="row">
  <h5 class="text-section">
+   @if(isset($country))
    {{$country->country}}
+   @endif
  </h5>
  <hr class="section-hr">
 </div>

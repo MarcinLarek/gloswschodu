@@ -57,7 +57,7 @@ class PostController extends Controller
     $admin = Admin::where('id',$post->admin_id)->first();
     $cleansection = str_replace(',','',strtolower(preg_replace('/\s+/', '', $section->section)));
     $countries = Countries::get();
-    return view($cleansection.'.show')
+    return view('plportal.show')
     ->with('post', $post)
     ->with('posts', $posts)
     ->with('topposts', $topposts)
@@ -80,7 +80,7 @@ class PostController extends Controller
     $sections = Section::get();
     $cleansection = str_replace(',','',strtolower(preg_replace('/\s+/', '', $section->section)));
     $countries = Countries::get();
-    return view($cleansection.'.category')
+    return view('plportal.category')
     ->with('main', $main)
     ->with('posts', $posts)
     ->with('topposts', $topposts)
@@ -127,7 +127,7 @@ class PostController extends Controller
     $sections = Section::get();
     $cleansection = str_replace(',','',strtolower(preg_replace('/\s+/', '', $section->section)));
     $countries = Countries::get();
-    return view($cleansection.'.category')
+    return view('plportal.category')
     ->with('main', $main)
     ->with('posts', $posts)
     ->with('topposts', $topposts)
@@ -167,7 +167,7 @@ class PostController extends Controller
     $sections = Section::get();
     $cleansection = str_replace(',','',strtolower(preg_replace('/\s+/', '', $section->section)));
     $countries = Countries::get();
-    return view($cleansection.'.category')
+    return view('plportal.category')
     ->with('main', $main)
     ->with('posts', $posts)
     ->with('topposts', $topposts)

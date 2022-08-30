@@ -97,6 +97,7 @@ class PostController extends Controller
 
     public function store(PostRequest $request)
     {
+        $section = Section::where('section', $request['section'])->first();
         $imagePath = request('image')->store('uploads', 'public');
         $optimizerChain = OptimizerChainFactory::create();
         $optimizerChain->optimize('storage/'.$imagePath);
@@ -105,6 +106,7 @@ class PostController extends Controller
         $data = array(
          'admin_id' => auth()->user()->id,
          'country_id' => $request['country'],
+         'section_id' => $section->id,
          'title' => $request['title'],
          'author' => $request['author'],
          'source' => $request['source'],
