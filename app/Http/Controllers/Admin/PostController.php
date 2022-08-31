@@ -147,7 +147,8 @@ class PostController extends Controller
     }
 
     public function temppostmaker()
-    {/* OUTDATED
+    {
+      /*
       $categories = Category::get();
 
       if (Post::get()->isempty()) {
@@ -163,6 +164,8 @@ class PostController extends Controller
             for ($b=0; $b < 11; $b++) {
             $data = array(
              'admin_id' => auth()->user()->id,
+             'country_id' => rand(1,13),
+             'section_id' => $category->getsection()->id,
              'title' => 'Test Title ',
              'author' => 'Test author',
              'source' => 'test source',
@@ -180,6 +183,7 @@ class PostController extends Controller
            }
           }
         }
-      return redirect()->back()->with('successalert', 'successalert');*/
+      */
+      return redirect()->back()->with('successalert', 'successalert');
     }
 }

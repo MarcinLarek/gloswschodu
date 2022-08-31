@@ -172,6 +172,7 @@ class PostController extends Controller
     ->with('posts', $posts)
     ->with('topposts', $topposts)
     ->with('section', $cleansection)
+    ->with('topsection', $section)
     ->with('serachsection', $section)
     ->with('countries', $countries)
     ->with('sections', $sections)

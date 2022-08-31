@@ -6,8 +6,14 @@
 
 <div class="row">
  <h5 class="text-section">
+   @if(isset($topsection))
+   {{$topsection->section}} >>
+   @endif
    @if(isset($country))
    {{$country->country}}
+   @endif
+   @if(isset($topcategory))
+   {{$topcategory}}
    @endif
  </h5>
  <hr class="section-hr">
@@ -31,7 +37,7 @@
               {{$post->created_at}}
               {{$post->author}}
             </div>
-            <a href="href="{{ route('post.show', ['post' => $post, 'section' => $post->getsection()]) }}"">
+            <a href="{{ route('post.show', ['post' => $post, 'section' => $post->getsection()]) }}">
               <h6><b>{{$post->title}}</b></h6>
             </a>
             {{strip_tags(substr($post->postcontent, 0, 100))}}...
@@ -56,7 +62,7 @@
               {{$post->created_at}}
               {{$post->author}}
             </div>
-            <a href="href="{{ route('post.show', ['post' => $post, 'section' => $post->getsection()]) }}"">
+            <a href="{{ route('post.show', ['post' => $post, 'section' => $post->getsection()]) }}">
               <h6><b>{{$post->title}}</b></h6>
             </a>
             {{strip_tags(substr($post->postcontent, 0, 100))}}...
