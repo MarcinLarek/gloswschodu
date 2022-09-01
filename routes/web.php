@@ -49,7 +49,7 @@ Route::domain(config('app.name'))->group(function () {
         Route::get('/admin/{post}/delete', [\App\Http\Controllers\Admin\PostController::class, 'delete'])->name('admin.post.delete');
         Route::post('/admin/{post}/deletpost', [\App\Http\Controllers\Admin\PostController::class, 'deletepost'])->name('admin.post.deletepost');
         Route::get('/admin/temppostmaker', [App\Http\Controllers\Admin\PostController::class, 'temppostmaker'])->name('admin.temppostmaker');
-
+        Route::get('/admin/seo', [App\Http\Controllers\Admin\PostController::class, 'seomaker'])->name('admin.seo');
     });
 
     Route::middleware('guest')->group(function () {

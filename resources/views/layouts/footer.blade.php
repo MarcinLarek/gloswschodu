@@ -9,7 +9,7 @@
             <a href="#">Wydawca</a>
           </div>
           <div class="col-4" align="center">
-            ⓒ 2019 <a href="{{ route( 'index' ) }}"> <b> <u>PLPORTAL.pl</u> </b> </a> Wszelkie prawa zastrzeżone. </br>
+            ⓒ 2022 <a href="{{ route( 'index' ) }}"> <b> <u>Głoswschodu.org</u> </b> </a> Wszelkie prawa zastrzeżone. </br>
           </div>
           <div class="col-4" align="center">
             Developed by <a href="https://fundacjaglosmlodych.org/"> <u>Fundacja na Rzecz Promocji i Rozwoju „Głos Młodych”</u> </a>  and Marcin Larek

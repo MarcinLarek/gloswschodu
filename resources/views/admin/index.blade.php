@@ -70,6 +70,17 @@
               </div>
           </div>
       </div>
+
+      <div class="col-md-3">
+            <div href="#" class="card text-center bg-danger shadow">
+                <div class="card-body mt-5 mb-5">
+                    <a class="stretched-link" href="{{ route('admin.seo') }}">
+                        <h2>Stwórz SEO dla wszystkich postów</h2> (Tylko dla lokalnych testów. Nie klikać na pressglobal.pl)
+                    </a>
+                </div>
+            </div>
+        </div>
+
     </div>
     @endif
 </div>

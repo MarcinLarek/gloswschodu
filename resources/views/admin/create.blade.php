@@ -16,9 +16,29 @@
 
             <div class="row pt-2">
                 <div class="col-12">
-                    <label for="title" class="control-label">Tyutuł posta</label>
+                    <label for="title" class="control-label">Tyutuł</label>
                     <input name="title" id="title" class="form-control" placeholder="Tytuł" value="{{ old('title') }}" />
                     @error('title')
+                    <span class="text-danger">{{ $message }}</span>
+                    @enderror
+                </div>
+            </div>
+
+            <div class="row pt-2">
+                <div class="col-12">
+                    <label for="seo" class="control-label">Tytuł dla SEO (Uproszczony, krótki tytuł wyświetlający się w pasku wyszukiwania. Max 100 znaków)</label>
+                    <input name="seo" id="seo" class="form-control" placeholder="Seo" value="{{ old('seo') }}" />
+                    @error('seo')
+                    <span class="text-danger">{{ $message }}</span>
+                    @enderror
+                </div>
+            </div>
+
+            <div class="row pt-2">
+                <div class="col-12">
+                    <label for="summary" class="control-label">Zajawka. Kilka kluczowych zdań wyświetlających się pomiędzy zdjęciem artykułu a tytułem. (Opcjonalnie)</label>
+                    <textarea name="summary" id="summary" placeholder="Zajawka" class="form-control">{{ old('summary') }}</textarea>
+                    @error('summary')
                     <span class="text-danger">{{ $message }}</span>
                     @enderror
                 </div>

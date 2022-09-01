@@ -25,6 +25,17 @@
                 </div>
             </div>
 
+            <div class="row pt-2">
+                <div class="col-12">
+                    <label for="summary" class="control-label">Zajawka. Kilka kluczowych zdań wyświetlających się pomiędzy zdjęciem artykułu a tytułem. (Opcjonalnie)</label>
+                    <textarea name="summary" id="summary" placeholder="Zajawka" class="form-control">{{ old('summary', $post->summary) }}</textarea>
+                    @error('summary')
+                    <span class="text-danger">{{ $message }}</span>
+                    @enderror
+                </div>
+            </div>
+
+
             <div class="row pt-4">
                 <div class="col-12">
                     <label for="author" class="control-label">Autor:</label>
