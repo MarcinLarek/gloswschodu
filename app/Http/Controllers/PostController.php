@@ -140,20 +140,18 @@ class PostController extends Controller
   }
 
   public function country(Countries $country){
-    $main = $country->getposts()->sortDesc()->paginate( 20 );
-    $posts = $country->getposts()->sortByDesc('id')->take(10);
-    $topposts = $country->getposts()->sortByDesc('reads')->take(10);
+    $firstpost = Post::where('country_id',$country->id)->orderBy('id', 'DESC')->first();
+    $posts = Post::where('country_id',$country->id)->orderBy('id', 'DESC')->skip(1)->take(24)->get();
     $sections = Section::get();
-    $countries = Countries::get();
     $check = true;
-    return view('plportal.category')
-    ->with('main', $main)
-    ->with('posts', $posts)
-    ->with('topposts', $topposts)
-    ->with('countries', $countries)
-    ->with('check', $check)
-    ->with('country',$country)
-    ->with('sections', $sections);
+    $countries = Countries::get();
+      return view('plportal.indexcountry')
+      ->with('firstpost', $firstpost)
+      ->with('posts', $posts)
+      ->with('check', $check)
+      ->with('country',$country)
+      ->with('countries', $countries)
+      ->with('sections', $sections);
   }
 
   public function sectioncountry(Section $section, Countries $country)

@@ -146,7 +146,21 @@ class PostController extends Controller
       $title = str_replace('.', '', $title);
       $title = str_replace(',', '', $title);
       $title = str_replace('?', '', $title);
-      $title = str_replace('!', '', $title);
+      $title = str_replace('"', '', $title);
+      $title = str_replace('\'', '', $title);
+      $title = str_replace('(', '', $title);
+      $title = str_replace(')', '', $title);
+      $title = str_replace('\\', '', $title);
+      $title = str_replace('/', '', $title);
+      $title = str_replace('@', '', $title);
+      $title = str_replace('#', '', $title);
+      $title = str_replace('$', '', $title);
+      $title = str_replace('%', '', $title);
+      $title = str_replace('^', '', $title);
+      $title = str_replace('&', '', $title);
+      $title = str_replace('*', '', $title);
+      $title = str_replace('”', '', $title);
+      $title = str_replace('„', '', $title);
       $title = preg_replace('/\s+/', '-', $title);
       return $title;
     }
@@ -172,14 +186,19 @@ class PostController extends Controller
 
     public function seomaker()
         {
-    
+          $posts = Post::get();
+      foreach ($posts as $post) {
+        $post->seo =  $this->seo($post->seo);
+        $post->update();
+      }
+          /*
           $posts = Post::get();
           foreach ($posts as $post) {
             if ($post->seo == null) {
               $post->seo =  $this->seo(substr($post->title, 0, 100));
               $post->update();
             }
-          }
+          }*/
           return redirect()->route('admin.index')->with('successalert', 'successalert');
 
 

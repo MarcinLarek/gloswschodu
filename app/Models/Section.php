@@ -11,7 +11,7 @@ class Section extends Model
 
     public function getRouteKeyName()
    {
-       return 'section'; // db column name you would like to appear in the url.
+       return 'sectionseo'; // db column name you would like to appear in the url.
    }
 
     public function category() {
