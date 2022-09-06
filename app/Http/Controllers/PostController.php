@@ -57,6 +57,7 @@ class PostController extends Controller
     $admin = Admin::where('id',$post->admin_id)->first();
     $cleansection = str_replace(',','',strtolower(preg_replace('/\s+/', '', $section->section)));
     $countries = Countries::get();
+    $country = Countries::where('id',$post->country_id)->first();
     return view('plportal.show')
     ->with('post', $post)
     ->with('posts', $posts)
@@ -66,6 +67,8 @@ class PostController extends Controller
     ->with('serachsection', $section)
     ->with('sections', $sections)
     ->with('admin', $admin)
+    ->with('topsection', $section)
+    ->with('country',$country)
     ->with('categories', $categorylist);
   }
 
