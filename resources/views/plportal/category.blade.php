@@ -4,20 +4,7 @@
 @endsection
 @section('mainpage')
 
-<div class="row">
- <h5 class="text-section">
-   @if(isset($topsection))
-   {{$topsection->section}} >>
-   @endif
-   @if(isset($country))
-   {{$country->country}}
-   @endif
-   @if(isset($topcategory))
-   {{$topcategory}}
-   @endif
- </h5>
- <hr class="section-hr">
-</div>
+
 <div class="row">
     <div class="col-xl-9 col-l-9 col-md-12 col-sm-12">
     <div class="row">
