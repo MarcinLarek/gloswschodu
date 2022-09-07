@@ -12,6 +12,7 @@ use App\Models\Category;
 use App\Models\Post;
 use App\Models\PostCategories;
 use App\Models\Countries;
+use Illuminate\Support\Str;
 
 class PostController extends Controller
 {
@@ -224,7 +225,9 @@ class PostController extends Controller
              'admin_id' => auth()->user()->id,
              'country_id' => rand(1,13),
              'section_id' => $category->getsection()->id,
-             'title' => 'Test Title ',
+             'title' => Str::random(10).' '.Str::random(15),
+             'seo' => Str::random(10).' '.Str::random(15),
+             'summary' => Str::random(20).' '.Str::random(20),
              'author' => 'Test author',
              'source' => 'test source',
              'postcontent' => 'asdihas dkljsad kljsd ajads oidjs iodsajoiasdj iodsajadsoi jdas iojdsaoi jadsio jsadio jaisodj ioasdj saiojd saiojd ioasj iasdjasdiojasd iodasj ioasd jioasd joiasdj sadioj dsaiojdas is adjiodasjoiasdj ioasjds iojadsiodas jiodsaj idoasj dsaioj dsaiojd asiodj sioasj iasodj asoid jasido jasiojas ofjipsjd dfgjsdi j[-figsj isdgjdaf[sigsdj]]',
@@ -241,7 +244,7 @@ class PostController extends Controller
            }
           }
         }
-      */
+        */
       return redirect()->back()->with('successalert', 'successalert');
     }
 }

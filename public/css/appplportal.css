@@ -41,6 +41,17 @@
   align-items: flex-end;
 }
 
+.section-bigpost {
+  overflow: hidden;
+  height: 450px;
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+  color: white;
+  font-family: Arial;
+  align-items: flex-end;
+}
+
 .btn-sectiontext {
   border: none;
   background-color: inherit;

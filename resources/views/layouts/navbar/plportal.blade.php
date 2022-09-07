@@ -5,35 +5,30 @@
 
   <div class="row">
    <h5 class="text-primary">
-
-     @if(isset($check) && isset($country))
-     Strona Główna >>
-     @elseif(isset($check))
-     Strona Główna
-     @endif
+     <a href="{{route('index')}}">Strona Główna</a>
 
 
      @if(isset($country))
-     {{$country->country}}
+     <b class="text-dark"> >> </b> <a href="{{ route('post.country', ['country' => $country]) }}">{{$country->country}}</a>
      @endif
 
 
      @if(isset($topsection) && isset($country))
-      >> {{$topsection->section}}
+      <b class="text-dark"> >> </b> <a href="{{ route('post.sectionposts', ['section' => $topsection]) }}">{{$topsection->section}}</a>
      @elseif(isset($topsection))
-       {{$topsection->section}}
+      <b class="text-dark"> >> </b> <a href="{{ route('post.sectionposts', ['section' => $topsection]) }}">{{$topsection->section}}</a>
      @endif
 
 
      @if(isset($topcategory) && isset($topsection))
-      >> {{$topcategory}}
+      <b class="text-dark"> >> </b> <a href="{{ route('post.category', ['category' => $topcategory, 'section' => $topcategory->getsection()]) }}">{{$topcategory->category}}</a>
      @elseif(isset($topcategory))
-       {{$topcategory}}
+      <b class="text-dark"> >> </b> <a href="{{ route('post.category', ['category' => $topcategory, 'section' => $topcategory->getsection()]) }}">{{$topcategory->category}}</a>
      @endif
 
 
      @if(isset($post) && isset($admin))
-     >> {{$post->title}}
+     <b class="text-dark"> >> </b> {{$post->title}}
      @endif
 
    </h5>

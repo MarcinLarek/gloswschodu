@@ -91,7 +91,7 @@ class PostController extends Controller
     ->with('serachsection', $section)
     ->with('countries', $countries)
     ->with('sections', $sections)
-    ->with('topcategory', $category->category)
+    ->with('topcategory', $category)
     ->with('categories', $categorylist);
   }
 
@@ -177,7 +177,31 @@ class PostController extends Controller
     ->with('serachsection', $section)
     ->with('countries', $countries)
     ->with('sections', $sections)
-    ->with('topcategory', $country->country)
+    ->with('country', $country)
+    ->with('categories', $categorylist);
+  }
+
+
+  public function sectionposts(Section $section)
+  {
+    $main = $section->getposts()->sortDesc()->paginate( 20 );
+    $posts = $section->getposts()->sortByDesc('id')->take(10);
+    $topposts = $section->getposts()->sortByDesc('reads')->take(10);
+    $categorylist = Category::where('section_id',$section->id)
+                             ->where('parent_category_id',null)
+                             ->get();
+    $sections = Section::get();
+    $cleansection = str_replace(',','',strtolower(preg_replace('/\s+/', '', $section->section)));
+    $countries = Countries::get();
+    return view('plportal.category')
+    ->with('main', $main)
+    ->with('posts', $posts)
+    ->with('topposts', $topposts)
+    ->with('section', $cleansection)
+    ->with('topsection', $section)
+    ->with('serachsection', $section)
+    ->with('countries', $countries)
+    ->with('sections', $sections)
     ->with('categories', $categorylist);
   }
 

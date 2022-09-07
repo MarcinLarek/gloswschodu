@@ -64,7 +64,7 @@ Route::domain(config('app.name'))->group(function () {
 
         Route::get('/', [App\Http\Controllers\HomeController::class, 'index'])->name('index');
         Route::get('/{section}/Panstwo/{country}', [App\Http\Controllers\PostController::class, 'sectioncountry'])->name('post.section.country');
-        Route::get('/{section}', [App\Http\Controllers\PostController::class, 'index'])->name('post.index');
+        Route::get('/{section}', [App\Http\Controllers\PostController::class, 'sectionposts'])->name('post.sectionposts');
         Route::get('/Panstwo/{country}', [App\Http\Controllers\PostController::class, 'country'])->name('post.country');
         Route::get('/{section}/{post}', [App\Http\Controllers\PostController::class, 'show'])->name('post.show');
         Route::get('/{section}/Kategorie/{category}', [App\Http\Controllers\PostController::class, 'category'])->name('post.category');

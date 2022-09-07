@@ -19,6 +19,8 @@ class CreatePostsTable extends Migration
             $table->unsignedBigInteger('section_id');
             $table->unsignedBigInteger('admin_id');
             $table->string('title');
+            $table->string('seo');
+            $table->text('summary')->nullable();
             $table->string('author');
             $table->string('source');
             $table->string('image');
