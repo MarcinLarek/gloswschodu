@@ -8,8 +8,8 @@
   background-repeat: no-repeat;
   background-size: 100% calc(100%);
   background-position: center;
-  align-items: flex-end;
-  justify-items: end !important;
+  align-items: center;
+
 }
 
 

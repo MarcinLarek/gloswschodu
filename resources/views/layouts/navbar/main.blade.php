@@ -29,8 +29,21 @@
 <div class="container">
 
   <div class="row mt-2">
-    <div class="col-12 d-flex  justify-content-between headerimage w-100" style="background-image:  url('/storage/naglowek.jpg');">
-      <a href="{{route('index')}}" class="w-100 h-100"></a>
+    <div class="col-12 headerimage w-100" style="background-image:  url('/storage/naglowek.jpg');">
+      <a href="{{route('index')}}" class="w-50 h-100"></a>
+      <div class="row">
+        <div class="col-6">
+
+        </div>
+        <div class="col-6 d-flex  align-middle align-items-center" style="height: 150px;">
+          <div class="bg-danger d-inline-flex align-items-center text-light">
+            <a class="p-1" style="padding-right: 10px; padding-left: 10px" href="{{route('index')}}" >STRONA GŁÓWNA</a> |
+            <a class="p-1" style="padding-right: 10px; padding-left: 10px" href="#">O PROJEKCIE</a> |
+            <a class="p-1" style="padding-right: 10px; padding-left: 10px" href="#">KARIERA</a> |
+            <a class="p-1" style="padding-right: 10px; padding-left: 10px" href="#">O NAS</a>
+          </div>
+        </div>
+      </div>
   </div>
 </div>
 
