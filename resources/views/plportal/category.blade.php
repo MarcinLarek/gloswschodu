@@ -12,14 +12,14 @@
         @foreach($main as $post)
         @if($loop->iteration %2 == 0)
         <div class="row">
-          <div class="col-4">
+          <div class="col-xl-4 col-l-4 col-md-12 col-sm-12">
               <a href="{{ route('post.show', ['post' => $post, 'section' => $post->getsection()]) }}">
                 <div class=" mb-2 fiveobjectlist" style="width: 150px;background-image: url('/storage/{{ $post->image }}')">
 
                 </div>
               </a>
           </div>
-          <div class="col-8">
+          <div class="col-xl-8 col-l-8 col-md-12 col-sm-12">
             <div class="text-secondary">
               {{$post->created_at}}
               {{$post->author}}
@@ -37,14 +37,14 @@
         @foreach($main as $post)
         @if($loop->iteration %2 == 1)
         <div class="row">
-          <div class="col-4">
+          <div class="col-xl-4 col-l-4 col-md-12 col-sm-12">
               <a href="{{ route('post.show', ['post' => $post, 'section' => $post->getsection()]) }}">
                 <div class=" mb-2 fiveobjectlist" style="width: 150px;background-image: url('/storage/{{ $post->image }}')">
 
                 </div>
               </a>
           </div>
-          <div class="col-8">
+          <div class="col-xl-8 col-l-8 col-md-12 col-sm-12">
             <div class="text-secondary">
               {{$post->created_at}}
               {{$post->author}}
