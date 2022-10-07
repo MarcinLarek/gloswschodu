@@ -14,11 +14,13 @@
         "laravel/tinker": "^2.5",
         "laravel/ui": "^3.4",
         "ps/image-optimizer": "^2.0",
+        "rennokki/laravel-eloquent-query-cache": "^3.3",
         "spatie/image-optimizer": "^1.6",
         "spatie/laravel-image-optimizer": "^1.7",
         "spatie/laravel-medialibrary": "^9.0.0"
     },
     "require-dev": {
+        "barryvdh/laravel-debugbar": "^3.7",
         "facade/ignition": "^2.5",
         "fakerphp/faker": "^1.9.1",
         "laravel/sail": "^1.0.1",

@@ -13,8 +13,9 @@ class HomeController extends Controller
 {
      public function index()
      {
-       $firstpost = Post::orderBy('id', 'DESC')->first();
-       $posts = Post::orderBy('id', 'DESC')->skip(1)->take(24)->get();
+       $posts = Post::with(['category', 'section'])->orderBy('id', 'DESC')->take(25)->get();
+       $firstpost = $posts->first();
+      $posts->shift();
        $sections = Section::get();
        $check = true;
        $countries = Countries::get();

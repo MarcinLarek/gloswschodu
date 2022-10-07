@@ -4,10 +4,12 @@ namespace App\Models;
 
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
+use Rennokki\QueryCache\Traits\QueryCacheable;
 
 class Category extends Model
 {
-    use HasFactory;
+    use HasFactory, QueryCacheable;
+    protected $cacheFor = 1200;
 
     protected $fillable = [
         'section_id',

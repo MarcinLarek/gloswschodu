@@ -1,0 +1,129 @@
+.dropdown-toggle::after {
+    display:none;
+}
+
+.headerimage {
+  overflow: hidden;
+  height: 150px;
+  background-repeat: no-repeat;
+  background-size: 100% calc(100%);
+  background-position: center;
+  align-items: center;
+
+}
+
+
+.footer  {
+  background-color: #dedede;
+  font-size: 13px;
+}
+
+.carouselphoto {
+  width: 100%;
+  height: 500px;
+}
+
+.rightlistphoto {
+  height: 120px;
+}
+.rightlisttext > a {
+  color: black;
+  font-size: 14px;
+}
+.rightlisttext {
+  font-size: 12px;
+}
+ a {
+    text-decoration: none;
+    color: inherit;
+}
+a:hover {
+   text-decoration: none;
+   color: inherit;
+}
+
+.bordercolumns {
+  overflow: hidden;
+  height: 460px;
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+  color: white;
+  font-family: Arial;
+  align-items: flex-end;
+}
+.squarecolumns {
+  overflow: hidden;
+  height: 200px;
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+  color: white;
+  font-family: Arial;
+  align-items: flex-end;
+}
+
+.minicolumns {
+  overflow: hidden;
+  height: 200px;
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+}
+
+.fiveobjectlist {
+  overflow: hidden;
+  height: 150px;
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+  color: white;
+  font-family: Arial;
+  align-items: flex-end;
+}
+
+.bottomleft {
+  height: 190px;
+  color: white;
+  align-items: center;
+  background-image:  url('/storage/rejestruj.jpg')
+}
+.bottommiddle {
+  height: 190px;
+  align-items: center;
+  background-color: #e8e8e8;
+  overflow: hidden;
+}
+.bottomright {
+  height: 190px;
+  color: white;
+  font-family: Arial;
+  align-items: center;
+  background-image:  url('/storage/loguj.jpg')
+}
+.rightheader {
+  background-color: #d4d4d4;
+}
+
+.minisquare {
+  overflow: hidden;
+  height: 80px;
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+}
+.carousel-indicators {
+  bottom: 35px;
+}
+.carousel-indicators img{
+  margin-top: -10px;
+  height: 70px;
+  width: 100px;
+}
+.carousel-indicators button{
+
+  width: 100px !important;
+}
+.carousel-caption > a > h5{
+  margin-top: -100px;
+}
